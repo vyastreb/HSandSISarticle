@@ -16,4 +16,6 @@ To be shared with
 + Olesya Ved'
 + Henry Proudhon
 + Patrick Ballard
++ Sébastien Neukirch
 + Samuel Forest
++ Georges Cailletaud

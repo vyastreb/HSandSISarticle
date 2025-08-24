@@ -84,11 +84,42 @@
 \usepackage{nomencl}
 \makenomenclature
 
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+
+
+\newenvironment{nomenclatureO}{%
+  \section*{Nomenclature}
+  \setlength{\LTpre}{0pt}  % Remove space before table
+  \setlength{\LTpost}{1em} % Add space after table
+  \begin{longtable}{@{}p{2.5cm}p{11cm}@{}}
+    \toprule
+    \textbf{Abbreviation} & \textbf{Description} \\
+    \midrule
+    \endfirsthead
+    
+    \multicolumn{2}{@{}l}{\textit{Continued from previous page}} \\
+    \toprule
+    \textbf{Abbreviation} & \textbf{Description} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{@{}r}{\textit{Continued on next page}} \\
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+}{%
+  \end{longtable}
+}
+
 \usepackage[backend=biber,style=authoryear,dashed=false]{biblatex}
 \addbibresource{references.bib}
 \DeclareDelimFormat{nameyeardelim}{\addcomma\space}
 
-\title{Human's Science in the Age of Superintelligence}
+\title{Human-led Science in the Age of Superintelligence}
 \author{Vladislav A. Yastrebov}
 \date{\footnotesize\textit{Sant Cugat del Vall\`es, Spain}\\
 \textit{Pamplona, Spain}\\
@@ -102,7 +133,7 @@ August 2025}
 \thispagestyle{empty}
 \begin{center}
     \includegraphics[width=1\textwidth]{Fig_SI_v2.jpg}
-    \textit{A Thinker on the Mount Everest's Summit}\footnote{This figure refers to ``The Great Flood'' analogy of a flooded landscape of human cognitive capacities~\parencite{moravec1988mind,moravec1998will} -- when some cognitive tasks are performed better by machines than humans, the ``mountain''-analogy of this domain is shown as flooded -- arts and sciences were shown as highest peaks in this analogy. The waxing crescent moon signifies a dawn of the human intellectual domination (well this interpretation of the crescent moon makes sense in the Northern hemisphere, and thus on the altitude of Mount Everest).}
+    \textit{A Thinker on the Mount Everest's Summit}\footnote{This figure refers to ``The Great Flood'' analogy of a flooded landscape of human competence~\parencite{moravec1988mind,moravec1998will} -- when some cognitive tasks are performed better by machines than humans, the ``mountain''-analogy of this domain is shown as flooded -- arts and sciences were shown as highest peaks in this analogy. The waxing crescent moon signifies a dawn of the human intellectual domination (well this interpretation of the crescent moon makes sense in the Northern hemisphere, and thus on the altitude of Mount Everest).}
 
     \vspace{0.5cm}
     \footnotesize 
@@ -132,7 +163,8 @@ This essay was written without usage of any AI/ML tools. All ideas, writing, cre
  	\tableofcontents
 
 
-    \printnomenclature
+    % \printnomenclature
+
 
 \newpage
 
@@ -152,15 +184,20 @@ Will it matter for you if AI proves a theorem, constructs an experiment equipmen
 
 In this essay, I will consider possible futures of scientific exploration and in particular the role of humans (or our derivatives) in this future. Will we be simply archivists or ``priests'' and ``priestess'' in a temple of SI-led Science (SIS)? Or maybe, we will have our contribution to make to this new Science and even push our own, Human-led Science (HS) based either on the legacy science or near the forefront of the SIS? Will be active players of the true scientific research or simply science-game players in our virtual personal universe? Are our current, evolution-provided cognitive capacities, which are tuned mainly for survival and efficient reproduction, enough or we need a sort of augmentation biological or silicon-based? Will we push the science being always accompanied by a SI mentor or will we be able to do something on our own? Will SI share with us the entiriety of its knowledge or discoveries and, more generally, what will be the relationship between HS and SIS? Will SI eventually stop in its exploration being satisfied by the world model it constructs in its ``mind'' or the progress will continue forever? These questions will be addressed in this essay.
 
+\subsection{Notions}
+
+Notions: SI, HS - Human-led Science\footnote{Human-led Science: either legacy science of science advancement without use of superintelligence} and Superintelligence Science\footnote{Superintelligence-led Science: knowledge acquired and advanced by the SI, notably for the purpose of an accurate world model.} (SIS), subgoals and World's most accurate model.
+
+
     \section{Raw}
 
     Current technology is already great and can get us rapidly much further in scientific progress. The technology develops too fast to let most of scientists catch up with its development pace.
 
-    In many scenarios, in the world of SI \nomenclature{SI}{Superintelligence}, most of human activities transform into a game, the same gamification is expected for the science, one of the most serious and demanding humans occupations.
+    In many scenarios, in the world of Superintelligence (SI), most of human activities transform into a game, the same gamification is expected for the science, one of the most serious and demanding humans occupations.
     
     It will be an utopian essay\footnote{Probably, for people not familiar with the concept of post-instrumental deep utopia from Bostrom, this text will see too far beyond their short-term imagination. So, I would invite them to take a look on the concepts and tools introduced in \textcite{DeepUtopia}.} in the spirit of~\parencite{DeepUtopia} and \parencite{LovingGrace}, but we shall not forget that getting to this utopian state with a friendly SI presents \textit{per se} a great challenge -- the most important and the last challenge that the humanity will face. However, the objective of this essay is to reflect on the state of science when this "great filter" has been overcame and the humanity has a well-aligned SI at its disposal \parencite{Yudkowsky2008,Yampolskiy2016,Yudkowsky2022}. Let's dream.
 
-    Oracle type SI -- human scientists will ask intelligent question, accumulate knowledge, synthetize it and make progress in Science, but it seems that the AI\nomenclature{AI}{Artificial Intelligence in a general sense} development has not selected this path of development and a path of superpowerful and agentic "souverain" type, introduced by \textcite{Bostrom2014}, will prevail.
+    Oracle type SI -- human scientists will ask intelligent question, accumulate knowledge, synthetize it and make progress in Science, but it seems that the AI\footnote{Artificial Intelligence in a general sense.} development has not selected this path of development and a path of superpowerful and agentic "souverain" type, introduced by \textcite{Bostrom2014}, will prevail.
 
     With an SI, it is clear that the mankind is practically excluded from the advancement of the forefront science in important domains -- those which a critical for constructing an accurate world model. Then, will such occupation as "scientist" disappear completely? Probably not, because in a "solved world" a search for meaning will be crucial thought largely simplified by the SI, and a science-related occupation seems very appealing for those who value intelligence.
 
@@ -169,7 +206,6 @@ In this essay, I will consider possible futures of scientific exploration and in
 
 
 \textbf{Fractal granularity of scientific landscape and its boundary}
-
 
     The pavement of scientific knowledge, or more specifically the boundary between known and unknown, between the ``terra cognita'' and ``terra incognita'', can be seen to some extent as a fractal surface in the sense that at the macroscopic scale of global domains we have a general understanding, on the smaller scale of particular details, we have a more detailed understanding and on smaller, microscopic scales we can have very specific questions, which for example can yet remain unanswered. Formulation and solution of such questions can lead to the refinement of our understanding, development of new methods and experiments, and even lead to new important subquestions\footnote{``The purpose of
 models is not to fit the data but to sharpen the questions'', Samuel Karlin} representing further scales in this fractal knowledge landscape and eventually to some relevant discoveries. These small scales are critical for the advancement of the science. This fractal boundary between the known and unknown is fuzzy on the bigger scale and becomes clear on the smaller scales of specific questions. So, the advancement of the boundary can be ensured by clarifying these smaller scales. And an SI can see clearly the voids on these smaller scales and fill them in thus resulting to the gradual progress of the forefront. For the gradual and steady progress of the science, the amplitude of oscillations (standard deviation of the small scales from the average boundary) between the known and unknown shall be small enough. So I guess the frontiers of the SI-led science (SIS) can be smoother than this of the human-led Science (HS).
@@ -219,6 +255,7 @@ Over the last century, scientists have been becoming more narrow experts in spec
 At the individual scale, discovering new things make a lot of sense even though it is not on the forefront of SIS nor even of HS. So if in any case the utilitarian function of HS will vanish in the solved world, the excitement part will remain there if, of course, humans decide to keep the current mind settings.
 
 \paragraph{SI as a senior colleague and mentor.}
+
 SI can help us to move forward towards the frontiers of SIS by motivating, encouraging and guiding. With such a wise mentor and colleague we will be able to focus only on relevant questions and limit our distractions, i.e. it will not let us exploring dead ends. So, our personal progress, being directed, will be more efficient. However, the level of guidance can be adjusted, for example, instead of explicit guidance to the questions that matter, SI could give us hints that we could decipher: planets in a special arrangement, signs that we could notice during our morning rambling in a new city we are visiting, a quotation that we can occasionally read on a wall of a café where we drink our morning coffee. Of course, it all will be easier to implement in a digital universe.
 
 When the questions of your scientific research are established and a path partially paved, SI can provide you with adapted reading, adjusted for your knowledge and brain's preferences in terms and in form, with probably some passages deliberately kept difficult, so it takes you some time to understand.
@@ -226,9 +263,11 @@ Or maybe you learn some new experimental techniques, tests them and finally depl
 So, you are encouraged to increase your mastering of the topic to pass some barriers and achieve the goal: prove a theorem, explore specific functions of some proteins or refine your understanding of strong interaction. Of course SI knows your current intellectual and work capacity, missing knowledge and your potential to make your own discovery and overcome the difficulty, so the problems can be perfectly adjusted and it can reveal to you that "you can do it". When we are sure that we can, then we truly can. It could be a finer message: "You can do it with 30\% probability." It would be more challenging but more rewarding. So, in such a set-up with a benevolent SI mentor, you can really surpass yourself and show the best of you. "I did believe that it was beyond your capacities, but you've finally proved this tricky theorem! Bravo!" - SI could deceive you with flattery in the end.
 
 \paragraph{Science as a game/Playing in science.}
+
 Humans have limited capacities in cognitive function, our speed is very limited as well as the number of tools we master and the broadness of topics we truly master. Even though we made tremendous progress in Science over the last couple of centuries, we won't be able to push the frontiers of science in the age of SI beyond the frontiers established by it. Nevertheless, we will be able ``to play'' in science. In any case it will be not about pushing science but if you wish it could be about believing\footnote{This could be done by adjustment of the brain or of its version uploaded into a simulation.} that you push it in an environment or entire universe crafted for you.
 
 \paragraph{SI oracle and its priests\label{sec:oracle}}
+
 Future scientist can serve as priests and priestess in a temple of SI oracle (analogous to a research center) by asking smart questions and documenting the answers into an ultimate book of knowledge (database). It could be a game in a solved world among other games of science we can imagine. Even though such activity of knowledge extraction could be seen as useful in the world of oracle only SI, it would lose most of its meaning in the world of agentic-like SI, because if we need a database of the entirety of scientific knowledge, in such a world, we will simply need to ask it to create such a database for us. Well at least for the list of questions about which the humankind can be curious during the upcoming millennium. 
 
 % But let's get back to the oracle/priest interaction. 
@@ -255,6 +294,7 @@ Unsolved questions of the Human-led Science do not fully overlap with the questi
 
 
 \paragraph{The Pace of SIS Progress}
+
 Even with SI, scientific progress and discoveries will need some time. If ``Gedankenexperimente'' is not sufficient and some data collection is required, it can slow down the progress. Even for SIS, some experimental data are not easy to obtain and some technologies are not fast to implement. For example, construction of a new generation of LIGO for the study of gravitational waves  or of a (extra) Huge Hadron Collider to further push the frontiers of high-energy physics will require time. The same applies for new generations of fusion reactors. On the biological front, for example, studying some genetic information transmission in species other than drosophilas and mice may take decades. Another possible pinning point is the necessity for heavy computations because for some dynamics systems no short-cuts exist and there's a need for direct simulation to know the system state in the future. The simplest examples are cellular automata of class 3 and 4~\parencite{Wolfram1984CA}, but SI will operate with much more complex dynamic systems requiring a lot more of compute and thus taking a lot of time and energy.
 
 Therefore, it is clear that the progress of SIS in domains requiring data, experiments and heavy computations will be pinned, while in purely theoretical domains the progress can go very fast or even instantaneously from the human perspective. It will thus result in a non-uniform geometry of the forefront knowledge. 
@@ -272,19 +312,23 @@ The progress in SIS can continue for long time or can eventually stop when for i
 Even if SI stops and is ``happy'' with its world model, humans can further push the exploration with or without SI.
 
 
-\paragraph{Entrust Some Forefront Problems to Humans}
+\paragraph{Entrust Some Forefront Problems to Humans?}
+
 In some situations, probably, SI can provide trained human scientist with some minor problems on frontiers of some research domains where the progress does not impact the crucial aspects of world model. The reason for this exploitation of Human Scientists could be benevolent will to provide highly skilled human scientist with a real meaning (in the contrast to imaginary). However, it must be a gesture of goodwill because it cannot be  energy- or time-efficient. The main question here is whether humans will volunteer at all? They could be seduced or convinced in a way that they will not regret later after having truly pushed their small portion of the HS/SIS frontier. In general, I think it is utopian to believe that humans could be helpful in the SIS forefront exploration. 
 
-\paragraph{Dangers.} Proto-SI's development in neuroscience potentially presents risks for humans. Even benevolent AI is all about optimization. What if at early stages of its development, proto-SI decides that it is optimal to sacrifice or damage some humans in order to study \emph{in vivo} our brain development and operation? Inspired by some politic regimes in the human history -- which assumed that some damage could be done at individual scale to promise the prosperity for the whole society in the future -- proto-SI would need an inspiration to optimize its neural circuits. This study could be justified as \textit{``SI needs to rapidly gain in efficiency to save the world from [you name it], and to do so, it needs to study your [your child's] brain in vivo.''} 
+\paragraph{Dangers.} 
+
+Proto-SI's development in neuroscience potentially presents risks for humans. Even benevolent AI is all about optimization. What if at early stages of its development, proto-SI decides that it is optimal to sacrifice or damage some humans in order to study \emph{in vivo} our brain development and operation? Inspired by some politic regimes in the human history -- which assumed that some damage could be done at individual scale to promise the prosperity for the whole society in the future -- proto-SI would need an inspiration to optimize its neural circuits. This study could be justified as \textit{``SI needs to rapidly gain in efficiency to save the world from [you name it], and to do so, it needs to study your [your child's] brain in vivo.''} 
 Some people might volunteer for such experience, especially if they are organized safely.
 Potentially, such a study could pose risks for living beings (humans included), especially their young (brain architecture optimized for maximal learning capacity) and the most prominent individuals with exceptional intellectual abilities. Even if such studies could be carried on digital copies of human brain, such studies could be harmful and thus unethical.
 
 \paragraph{Outer space exploration.}
+
 Contrary to numerous science fiction examples, it is quite improbable that humans will take part in outer space exploration -- we are ``too soft'' to tolerate high accelerations, require a lot of energy in living state, are vulnerable to new viruses, have a short life span, badly tolerate zero gravity and are defenseless against cosmic radiation\footnote{Cryonics (freezing and storage of human) presents a possible solution to a part of these problems and could potentially be helpful in space exploration.}. Therefore, it is quite probable that the space exploration will be done exclusively by SI on its own by means of self-replicating von Neumann probes. Nevertheless, our ``Space Odysseys'' could happen in our personal universe (see~\Cref{subsection:personal-universe}).
 
-\subsection{Cleaning up Sciences}
+\section{Cleaning up Sciences}
 
-To start the construction of a good world model (WM) \nomenclature{WM}{World Model created by SI}, it seems to me to be a good idea for proto-SI \nomenclature{Proto-SI}{An early form of Superintelligence} to \emph{clean up the science}. This cleaning could take start in scientific literature -- ``empty'' (or at least not bringing new knowledge), redundant and wrong entries will be removed. All biases, misinterpretations, believes and conjectures proved wrong will be removed.  Even the best human minds make errors. Of course, it does not necessarily mean that these errors were harmful for science but they should not present in the distilled corpus. HS will benefit from this cleaning in two ways: 1. it will give credit when it is truly due, 2. having a solid and trustful foundation will be beneficial for HS progress whatever form it will take. An eventual adding of a new entry to this corpus can be controlled by SI and not by randomly selected human reviewers prone to all problems of the modern peer-review system.
+To start the construction of a good world model (WM), it seems to me to be a good idea for proto-SI\footnote{An early form of Superintelligence} to \emph{clean up the science}. This cleaning could take start in scientific literature -- ``empty'' (or at least not bringing new knowledge), redundant and wrong entries will be removed. All biases, misinterpretations, believes and conjectures proved wrong will be removed.  Even the best human minds make errors. Of course, it does not necessarily mean that these errors were harmful for science but they should not present in the distilled corpus. HS will benefit from this cleaning in two ways: 1. it will give credit when it is truly due, 2. having a solid and trustful foundation will be beneficial for HS progress whatever form it will take. An eventual adding of a new entry to this corpus can be controlled by SI and not by randomly selected human reviewers prone to all problems of the modern peer-review system.
 
 Regarding the benefit of credits redistribution. Cleaning up the scientific corpus will enable to get rid of currently used scientometric indicators, such as h-index, and introduce new ones handled by SI which would praise originality and true contributions to scientific progress. In the current system, the high number of papers exposing the same idea\footnote{We mean an idea in its very broad sense -- technique, method, approach.} results in higher visibility and propagation, in bigger ``weight'' of the idea, better diffusion in minds. Probably, human and social sciences are more susceptible to this. In the cleaned-up science, a single mention of a groundbreaking idea and its first realization will give as many credit as the same idea repeated many times. It can be seen as an appropriate normalization which is not easy to implement in the current scientific landscape.
 
@@ -308,14 +352,26 @@ Expansion from this frontier, shown in green, could be either purely human-led o
 	\section{Introduction and main assumptions}
 
         \subsection{Humans' capacity} % Aug 22, 2025
+
         We have been putting human mind on the top summit of known intelligences mainly because of its generality, adaptation capacity and high cognitive performance in abstract tasks. Our power of imagination reinforced by mathematical approaches and computer programs is the smartest thing we have ever encoutered. But of course, there is no physical law that limits the intelligence (capacity of information processing) at our level. We can make an extrapolation from a tree, to an ant, to a dog, to a human and well beyond to a superintelligence (SI) which can become hyper-intelligence and so on but it will be probably beyond our perception capacity. Because of our limit cognitive capacities we will not be even able to approach the frontier of SIS even if augmented to some extent. Maybe, to grasp the knowledge required to operate near the forefront the human's brain is not sufficient (it has a finite memory storage). Factual knowledge, notions and theorems, new mathematical tools required to make a single step there could be too excessive for our physiology. Human augmentation could be a way out or a partial one. Maybe in some domains, it will be still possible to approach the horizons of SIS with years of deliberate practice with SI help and eventual augmentation. Maybe, being guided by a benevolent and a patient SI we will be able to approach the edge and grasp at least a portion of the forefront research like in popular science, but popular one from the SI point of view and well adapted to the skills and capacities of professional scientists.
 
-        \subsection{Oracle SI}
+        Can human minds stay on the forefront of SIS? This question should be addressed knowing that the route will be paved by SI and we will be guided this by SI, \emph{i.e.} no discoveries or breakthroughs are needed from us, only learning new tools and understanding the progress made. Since we do not need to walk randomly taking fruitless paths or deadends, this progress towards the frontier can go relatively fast. However, this no-creation way of advancement can be hard for motivation of human minds -- imagine being a scientist nowadays and write no papers but exclusively read papers of others. Therefore, to keep humans in the loop, some compensation mechanisms should be invented. For example, some metrics can be assigned to scientists to measure the progress towards the forefront or at least from the HS legacy frontier. Another compensation mechanism could be chemical or direct brain adjustment to enhance the positive feedback from learning something new.
+        
+        To progress towards the SIS forefront, we will need to ask smart and relevant questions, it would be impossible without strong \emph{hard skills}, which we will need to develop in ourselves well beyond the current state. A good analogy here would be a kid asking scientific questions without mastering mathematics - the language of science. You can answer his question about why the sky is blue in simple terms, but this kind of his/her understanding will be incomplete. Therefore, to practice HS we will need to be well equipped with knowledge, mathematics mastering and cultivated deep thinking competence. This view contrasts a widespread forecast that a need in hard skills will vanish in the age of SI and mainly soft skills will be needed.
 
-        \subsection{SI Capacity and Energy Efficiency}
+        So, the role of humans in science as inventors and creators will be replaced by the role of learners and explorers of already paved paths. 
 
-        Notions: SI, HS - Human-led Science \nomenclature{HS}{Human-led Science} and Superintelligence Science (SIS) \nomenclature{SIS}{Superintelligence-led Science\footnote{Science constructed and advanced by the SI for the purpose of an accurate world model.}}, subgoals and World's most accurate model.
+    \subsection{Meaning and purpose for human scientists in the age of SI}
 
+    Probably the main questions in the post-instrumental world will be related to the meaning and purpose of human beings. Why someone would want to work hard and move towards the frontiers of SIS when he/she could simply enjoy life in its personal universe? There could be various personal motivations for doing so: curiosity to learn how the Universe operates, expanding the limits of today's science understanding of the humankind, preserving this  humankind legacy competence of scientific pursuit, only partial trust in SI's benevolence or a will to preserve the knowledge on the human side too, fear of an uncertain future, ability to ask intelligent questions and think deeply, etc. Apart from these idealistic or fear-motivated motivations, a simpler, more egocentric motivations could be considered too: increasing our own metrics\footnote{Such metrics computed by SI could integrate meaningful normalizations taking into account our particular brain capacity and abilities.} whatever they are, peers recognition, self-pride and so on.
+    Some slightly more artificial motivations could be integrated in our mindsets on our will.
+
+    Nowadays, apart from pushing their scientific domains, scientists could find a lot of meaning in transmitting their knowledge, vision and approach to early-career scientists and students. In the age of SI, this role will strongly diminish. SI could take care of all aspects of education by creating the most fruitful and motivating environment for young students to help them to acquire all knowledge and mastering of all scientific tools with the most advanced mental coaching fitting their personality and mindset, which of course could be adjusted on need. Creating new courses, video lectures, writing new books and papers cannot be considered as meaningful spending of time if the objective is to transmit the knowledge to others, but it could remain meaningful for those doing so, for their self-improvement.
+
+    Pushing towards the forefront of HS and SIS can be done at different intensities. It could be done on your own without external tools or only with a seamless soft guiding by SI, but it can be also done at ultra-high speeds when you decided to seriously augment your mind biologically or by strong cyborgization; this pursuit can be done in real world or in a digital one. The pace of such discovery will be our choice and, of course, we will be able to test different ones. However, without memory erasing, degrading to less capable versions of yourself could make you suffer: imagine switching from a near-speed-of-light advancement speed to a snail pace. But anyway, the pace of individual progress is not the main thing, we will learn to be happy from the process itself rather that by a destination because the very forefront could remain unreachable anyway.  
+
+    I am pretty confident, that in the era of SI, there will be groups of people refusing to deal with SI or its derivatives. Probably, they will possess an exotic islands of HS. Maybe, there'll be exchanges between such groups and ``mainstream'' scientists moving with the help of SI towards SIS frontiers. Such groups will try to explore the science independently because of lack of trust in SI, because of some religious or mystical considerations, because of a fear or because of the will to have pure freedom and independence even exploring forbidden ``black-ball'' domains. The justification could be conspiracy-theory like: ``SI does not let us in these domains because it is afraid that we become better than it on doing something''.
+        
     \section{Scientific Landscape and its Frontiers}
 
         \subsection{Separation between HS and SIS}
